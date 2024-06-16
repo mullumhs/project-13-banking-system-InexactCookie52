@@ -34,4 +34,15 @@ class Account:
             raise ValueError("balance is not a float: ")
         
 
-    def withdraw()
+    def withdraw(self, _balance, withdraw_am):
+        if withdraw_am < _balance:
+            _balance -= withdraw_am
+            print(f"You withdrew ${withdraw_am}:\n Your new balance is ${_balance}:")
+            return True
+        else:
+            return False
+        
+    def deposit(self, _balance, deposit_am):
+        if isinstance(deposit_am, float):
+            _balance += deposit_am
+            print(f"Deposited ${deposit_am}:\n New balance is ${_balance}")
