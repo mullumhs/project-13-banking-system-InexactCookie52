@@ -6,8 +6,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class Account:
     def __init__(self, name, acc_num):
-        self._set_name(name)
-        self._set_acc_num(acc_num)
+        self.set_name(name)
+        self.set_acc_num(acc_num)
         self._balance = 0
 
     def get_name(self):
