@@ -27,6 +27,7 @@ class Account:
 
     def get_balance(self):
         return self._balance
+    
     def set_balance(self, new_balance):
         if isinstance(new_balance, float) and new_balance != "":
             self._balance = new_balance
@@ -34,15 +35,15 @@ class Account:
             raise ValueError("balance is not a float: ")
         
 
-    def withdraw(self, _balance, withdraw_am):
-        if withdraw_am < _balance:
-            _balance -= withdraw_am
-            print(f"You withdrew ${withdraw_am}:\n Your new balance is ${_balance}:")
+    def withdraw(self, withdraw_am):
+        if withdraw_am <= self._balance:
+            self._balance -= withdraw_am
+            #print(f"You withdrew ${withdraw_am}:\n Your new balance is ${self._balance}:")
             return True
         else:
             return False
         
-    def deposit(self, _balance, deposit_am):
-        if isinstance(deposit_am, float):
-            _balance += deposit_am
-            print(f"Deposited ${deposit_am}:\n New balance is ${_balance}")
+    def deposit(self, deposit_am):
+        if isinstance(deposit_am, (int, float)):
+            self._balance += deposit_am
+            print(f"Deposited ${deposit_am}:\n New balance is ${self._balance}")
