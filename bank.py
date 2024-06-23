@@ -32,7 +32,7 @@ class Bank:
         else:
             raise ValueError(f"Account {acc_num}, not found")
         
-s
+
     def deposit(self, acc_num, amount):
         account = self.acc_exists(acc_num)
         if account:
